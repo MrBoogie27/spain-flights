@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Билеты Москва ⇄ Испания · 28.08–11.09.2026</title>
+<style>
+  :root {
+    --bg: #f5f6f8;
+    --card: #ffffff;
+    --border: #e2e5ea;
+    --accent: #2563eb;
+    --accent-soft: #eef4ff;
+    --text: #1f2430;
+    --muted: #8a91a0;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.45;
+    padding: 24px 16px 140px;
+  }
+  .wrap { max-width: 1080px; margin: 0 auto; }
+  h1 { font-size: 22px; margin: 0 0 4px; }
+  .sub { color: var(--muted); font-size: 14px; margin: 0 0 24px; }
+  h2 {
+    font-size: 17px;
+    margin: 28px 0 12px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid var(--border);
+  }
+  .options { display: flex; flex-direction: column; gap: 12px; }
+  .opt {
+    display: block;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 14px 16px;
+    cursor: pointer;
+    transition: border-color .15s, box-shadow .15s, background .15s;
+  }
+  .opt:hover { border-color: #c3ccdb; }
+  .opt.selected {
+    border-color: var(--accent);
+    background: var(--accent-soft);
+    box-shadow: 0 0 0 1px var(--accent);
+  }
+  .opt-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 10px;
+  }
+  .opt-title { display: flex; align-items: center; gap: 10px; font-weight: 600; font-size: 15px; }
+  .opt input { width: 18px; height: 18px; accent-color: var(--accent); margin: 0; }
+  .badge {
+    font-size: 12px;
+    font-weight: 500;
+    color: #b45309;
+    background: #fff4e5;
+    border-radius: 6px;
+    padding: 2px 8px;
+    white-space: nowrap;
+  }
+  .price-tag { font-weight: 700; font-size: 16px; white-space: nowrap; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; table-layout: fixed; }
+  th, td {
+    text-align: left;
+    padding: 7px 9px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+  th { color: var(--muted); font-weight: 500; font-size: 12px; }
+  tbody tr:last-child td { border-bottom: none; }
+  td.num, th.num { text-align: right; white-space: nowrap; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .seg-price td { color: var(--muted); font-size: 12px; }
+  .footer {
+    position: fixed;
+    left: 0; right: 0; bottom: 0;
+    background: var(--card);
+    border-top: 1px solid var(--border);
+    box-shadow: 0 -4px 16px rgba(0,0,0,.06);
+    padding: 14px 16px;
+  }
+  .footer-inner {
+    max-width: 1080px;
+    margin: 0 auto;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .total-label { font-size: 14px; color: var(--muted); }
+  .total-value { font-size: 26px; font-weight: 800; }
+  .diff { font-size: 12px; color: var(--muted); margin-top: 2px; }
+  .route-summary { font-size: 13px; color: var(--muted); flex: 1 1 260px; }
+  .route-summary b { color: var(--text); }
+  .empty { color: var(--muted); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Билеты Москва ⇄ Испания</h1>
+  <p class="sub">28.08.2026 – 11.09.2026 · 2 пассажира · цены указаны за двоих</p>
+
+  <h2>1. Москва → Испания</h2>
+  <div class="options" id="section-out"></div>
+
+  <h2>2. Испания → Москва</h2>
+  <div class="options" id="section-back"></div>
+</div>
+
+<div class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="total-label">Общая стоимость на 2</div>
+      <div class="total-value" id="total">—</div>
+      <div class="diff" id="diff"></div>
+    </div>
+    <div class="route-summary" id="summary"></div>
+  </div>
+</div>
+
+<script>
+const outbound = [
+  {
+    id: "out-A",
+    title: "Вариант A — через Измир (Turkish)",
+    badge: "пересадка в Стамбуле",
+    dest: "Барселона",
+    airlines: "Turkish Airlines + SunExpress",
+    price: 104578,
+    segments: [
+      { depDate: "28.08.2026", depTime: "2:25", from: "Москва", arrDate: "28.08.2026", arrTime: "11:10", to: "Измир", stops: "1 (Стамбул)", stopHours: "3:45", airline: "Turkish Airlines", link: "https://avs.io/AlXy", price: 55316 },
+      { depDate: "28.08.2026", depTime: "18:55", from: "Измир", arrDate: "28.08.2026", arrTime: "21:35", to: "Барселона", stops: "Прямой", stopHours: "7:45", airline: "SunExpress", link: "https://avs.io/AmXp", price: 49262 }
+    ]
+  },
+  {
+    id: "out-B",
+    title: "Вариант B — через Измир (Pegasus до Измира)",
+    badge: null,
+    dest: "Барселона",
+    airlines: "Pegasus + SunExpress",
+    price: 112819,
+    segments: [
+      { depDate: "28.08.2026", depTime: "1:45", from: "Москва", arrDate: "28.08.2026", arrTime: "5:55", to: "Измир", stops: "Прямой", stopHours: "", airline: "Pegasus", link: "https://short-url.cc/1sPL2", price: 63557 },
+      { depDate: "28.08.2026", depTime: "18:55", from: "Измир", arrDate: "28.08.2026", arrTime: "21:35", to: "Барселона", stops: "Прямой", stopHours: "", airline: "SunExpress", link: "https://avs.io/AmXp", price: 49262 }
+    ]
+  },
+  {
+    id: "out-C",
+    title: "Вариант C — через Измир (Ajet, пересадка в Анкаре)",
+    badge: "пересадка в Анкаре",
+    dest: "Барселона",
+    airlines: "Ajet + SunExpress",
+    price: 92057,
+    segments: [
+      { depDate: "28.08.2026", depTime: "5:05", from: "Москва", arrDate: "28.08.2026", arrTime: "11:50", to: "Измир (Аднан Мендерес, ADB)", stops: "1 (Анкара)", stopHours: "1:10", airline: "Ajet", link: "https://avs.io/An04", price: 42795 },
+      { depDate: "28.08.2026", depTime: "18:55", from: "Измир", arrDate: "28.08.2026", arrTime: "21:35", to: "Барселона", stops: "Прямой", stopHours: "7:45", airline: "SunExpress", link: "https://avs.io/AmXp", price: 49262 }
+    ]
+  },
+  {
+    id: "out-D",
+    title: "Вариант D — напрямую в Мадрид (Pegasus)",
+    badge: "пересадка в Стамбуле",
+    dest: "Мадрид",
+    airlines: "Pegasus",
+    price: 91010,
+    segments: [
+      { depDate: "28.08.2026", depTime: "4:00", from: "Москва", arrDate: "28.08.2026", arrTime: "13:30", to: "Мадрид", stops: "1 (Стамбул)", stopHours: "1:50", airline: "Pegasus", link: "https://avs.io/AmO1", price: 91010 }
+    ]
+  }
+];
+
+const back = [
+  {
+    id: "back-A",
+    title: "Вариант A — из Севильи",
+    badge: "пересадка в Стамбуле",
+    origin: "Севилья",
+    airlines: "Pegasus",
+    price: 52818,
+    segments: [
+      { depDate: "11.09.2026", depTime: "15:45", from: "Севилья", arrDate: "12.09.2026", arrTime: "2:55", to: "Москва", stops: "1 (Стамбул)", stopHours: "1:45", airline: "Pegasus", link: "https://avs.io/AmAT", price: 52818 }
+    ]
+  },
+  {
+    id: "back-B",
+    title: "Вариант B — из Мадрида",
+    badge: "пересадка в Стамбуле",
+    origin: "Мадрид",
+    airlines: "Turkish Airlines",
+    price: 83578,
+    segments: [
+      { depDate: "11.09.2026", depTime: "18:25", from: "Мадрид", arrDate: "12.09.2026", arrTime: "6:15", to: "Москва", stops: "1 (Стамбул)", stopHours: "2:40", airline: "Turkish Airlines", link: "https://avs.io/AmwW", price: 83578 }
+    ]
+  }
+];
+
+const fmt = n => n.toLocaleString("ru-RU") + " ₽";
+const cell = v => v === "" || v == null ? '<span class="empty">—</span>' : v;
+const linkCell = l => l ? `<a href="${l}" target="_blank" rel="noopener">${l.replace("https://","")}</a>` : '<span class="empty">—</span>';
+
+function segTable(segments, showSubtotal) {
+  let rows = segments.map(s => `
+    <tr>
+      <td>${s.depDate}<br>${s.depTime}</td>
+      <td>${s.from}</td>
+      <td>${s.arrDate}<br>${s.arrTime}</td>
+      <td>${s.to}</td>
+      <td>${cell(s.stops)}</td>
+      <td>${cell(s.stopHours)}</td>
+      <td>${s.airline}</td>
+      <td>${linkCell(s.link)}</td>
+      <td class="num">${fmt(s.price)}</td>
+    </tr>`).join("");
+  return `<table>
+    <colgroup>
+      <col style="width:9%"><col style="width:15%"><col style="width:9%"><col style="width:15%">
+      <col style="width:10%"><col style="width:8%"><col style="width:13%"><col style="width:12%"><col style="width:9%">
+    </colgroup>
+    <thead><tr>
+      <th>Вылет</th><th>Откуда</th><th>Прилёт</th><th>Куда</th>
+      <th>Пересадки</th><th>Стыковка, ч</th><th>Авиакомпания</th><th>Ссылка</th><th class="num">Цена на 2</th>
+    </tr></thead>
+    <tbody>${rows}</tbody>
+  </table>`;
+}
+
+function renderSection(list, containerId, group, defaultId) {
+  const c = document.getElementById(containerId);
+  c.innerHTML = list.map(o => `
+    <label class="opt${o.id === defaultId ? " selected" : ""}" data-id="${o.id}">
+      <div class="opt-head">
+        <span class="opt-title">
+          <input type="radio" name="${group}" value="${o.id}" ${o.id === defaultId ? "checked" : ""}>
+          ${o.title}
+          ${o.badge ? `<span class="badge">${o.badge}</span>` : ""}
+        </span>
+        <span class="price-tag">${fmt(o.price)}</span>
+      </div>
+      ${segTable(o.segments)}
+    </label>`).join("");
+}
+
+const minOut = Math.min(...outbound.map(o => o.price));
+const minBack = Math.min(...back.map(o => o.price));
+const minTotal = minOut + minBack;
+
+function selected(list, group) {
+  const id = document.querySelector(`input[name="${group}"]:checked`).value;
+  return list.find(o => o.id === id);
+}
+
+function update() {
+  document.querySelectorAll(".opt").forEach(el => {
+    el.classList.toggle("selected", el.querySelector("input").checked);
+  });
+  const o = selected(outbound, "out");
+  const b = selected(back, "back");
+  const total = o.price + b.price;
+  document.getElementById("total").textContent = fmt(total);
+
+  const diff = total - minTotal;
+  document.getElementById("diff").textContent = diff === 0
+    ? "минимальная стоимость маршрута"
+    : `дороже минимума (${fmt(minTotal)}) на ${fmt(diff)}`;
+
+  document.getElementById("summary").innerHTML =
+    `Москва → <b>${o.dest}</b> (${o.airlines}), затем <b>${b.origin}</b> → Москва (${b.airlines})`;
+}
+
+renderSection(outbound, "section-out", "out", "out-A");
+renderSection(back, "section-back", "back", "back-A");
+document.querySelectorAll('input[type="radio"]').forEach(r => r.addEventListener("change", update));
+update();
+</script>
+</body>
+</html>
