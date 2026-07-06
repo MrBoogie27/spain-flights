@@ -106,6 +106,10 @@
   .route-summary b { color: var(--text); }
   .empty { color: var(--muted); }
 
+  .note { font-size: 13px; color: var(--muted); margin: -14px 0 20px; }
+  .price-wrap { display: flex; flex-direction: column; align-items: flex-end; white-space: nowrap; }
+  .delta { font-size: 12px; color: var(--muted); margin-top: 2px; }
+
   @media (max-width: 640px) {
     body { padding: 16px 12px 180px; }
     h1 { font-size: 20px; }
@@ -168,6 +172,7 @@
 <div class="wrap">
   <h1>Билеты Москва ⇄ Испания</h1>
   <p class="sub">28.08.2026 – 11.09.2026 · 2 пассажира · цены указаны за двоих</p>
+  <p class="note">Для сравнения: пересадка в Анкаре была с 9:10 до 17:40 — это 8:30.</p>
 
   <h2>1. Москва → Испания</h2>
   <div class="options" id="section-out"></div>
@@ -191,55 +196,59 @@
 const outbound = [
   {
     id: "out-A",
-    title: "Вариант A — через Измир (Turkish) → Барселона",
+    title: "Вариант A — через Измир (Turkish)",
     badge: "пересадка в Стамбуле",
     dest: "Барселона",
     airlines: "Turkish Airlines + SunExpress",
-    price: 104578,
+    price: 111838,
     segments: [
       { depDate: "28.08.2026", depTime: "2:25", from: "Москва", arrDate: "28.08.2026", arrTime: "11:10", to: "Измир", stops: "1 (Стамбул)", stopHours: "3:45", airline: "Turkish Airlines", link: "https://avs.io/AlXy", price: 55316 },
-      { depDate: "28.08.2026", depTime: "18:55", from: "Измир", arrDate: "28.08.2026", arrTime: "21:35", to: "Барселона", stops: "Прямой", stopHours: "7:45", airline: "SunExpress", link: "https://avs.io/AmXp", price: 49262 }
+      { depDate: "28.08.2026", depTime: "18:55", from: "Измир", arrDate: "28.08.2026", arrTime: "21:35", to: "Барселона", stops: "Прямой", stopHours: "7:45", airline: "SunExpress", link: "https://avs.io/AmXp", price: 49262 },
+      { depDate: "29.08.2026", depTime: "5:50", from: "Барселона", arrDate: "29.08.2026", arrTime: "9:40", to: "Мадрид", stops: "Прямой", stopHours: "", airline: "Поезд", link: "", price: 7260 }
     ]
   },
   {
     id: "out-B",
-    title: "Вариант B — через Измир (Pegasus до Измира) → Барселона",
+    title: "Вариант B — через Измир (Pegasus до Измира)",
     badge: null,
     dest: "Барселона",
     airlines: "Pegasus + SunExpress",
-    price: 112819,
+    price: 120079,
     segments: [
       { depDate: "28.08.2026", depTime: "1:45", from: "Москва", arrDate: "28.08.2026", arrTime: "5:55", to: "Измир", stops: "Прямой", stopHours: "", airline: "Pegasus", link: "https://short-url.cc/1sPL2", price: 63557 },
-      { depDate: "28.08.2026", depTime: "18:55", from: "Измир", arrDate: "28.08.2026", arrTime: "21:35", to: "Барселона", stops: "Прямой", stopHours: "", airline: "SunExpress", link: "https://avs.io/AmXp", price: 49262 }
+      { depDate: "28.08.2026", depTime: "18:55", from: "Измир", arrDate: "28.08.2026", arrTime: "21:35", to: "Барселона", stops: "Прямой", stopHours: "13:00", airline: "SunExpress", link: "https://avs.io/AmXp", price: 49262 },
+      { depDate: "29.08.2026", depTime: "5:50", from: "Барселона", arrDate: "29.08.2026", arrTime: "9:40", to: "Мадрид", stops: "Прямой", stopHours: "", airline: "Поезд", link: "", price: 7260 }
     ]
   },
   {
     id: "out-C",
-    title: "Вариант C — через Измир (Ajet, пересадка в Анкаре) → Барселона",
+    title: "Вариант C — через Измир (Ajet, пересадка в Анкаре)",
     badge: "пересадка в Анкаре",
     dest: "Барселона",
     airlines: "Ajet + SunExpress",
-    price: 92057,
+    price: 99317,
     segments: [
       { depDate: "28.08.2026", depTime: "5:05", from: "Москва", arrDate: "28.08.2026", arrTime: "11:50", to: "Измир", stops: "1 (Анкара)", stopHours: "1:10", airline: "Ajet", link: "https://avs.io/An04", price: 42795 },
-      { depDate: "28.08.2026", depTime: "18:55", from: "Измир", arrDate: "28.08.2026", arrTime: "21:35", to: "Барселона", stops: "Прямой", stopHours: "7:45", airline: "SunExpress", link: "https://avs.io/AmXp", price: 49262 }
+      { depDate: "28.08.2026", depTime: "18:55", from: "Измир", arrDate: "28.08.2026", arrTime: "21:35", to: "Барселона", stops: "Прямой", stopHours: "7:05", airline: "SunExpress", link: "https://avs.io/AmXp", price: 49262 },
+      { depDate: "29.08.2026", depTime: "5:50", from: "Барселона", arrDate: "29.08.2026", arrTime: "9:40", to: "Мадрид", stops: "Прямой", stopHours: "", airline: "Поезд", link: "", price: 7260 }
     ]
   },
   {
     id: "out-D",
-    title: "Вариант D — через Измир (Ajet, Стамбул) → Барселона",
+    title: "Вариант D — через Измир (Ajet, Стамбул)",
     badge: "пересадка в Стамбуле",
     dest: "Барселона",
     airlines: "Ajet + Turkish Airlines + SunExpress",
-    price: 92378,
+    price: 99638,
     segments: [
       { depDate: "28.08.2026", depTime: "1:45", from: "Москва", arrDate: "28.08.2026", arrTime: "9:25", to: "Измир", stops: "1 (Стамбул)", stopHours: "2:15", airline: "Ajet + Turkish Airlines", link: "https://avs.io/BmiH", price: 43116 },
-      { depDate: "28.08.2026", depTime: "18:55", from: "Измир", arrDate: "28.08.2026", arrTime: "21:35", to: "Барселона", stops: "Прямой", stopHours: "9:30", airline: "SunExpress", link: "https://avs.io/AmXp", price: 49262 }
+      { depDate: "28.08.2026", depTime: "18:55", from: "Измир", arrDate: "28.08.2026", arrTime: "21:35", to: "Барселона", stops: "Прямой", stopHours: "9:30", airline: "SunExpress", link: "https://avs.io/AmXp", price: 49262 },
+      { depDate: "29.08.2026", depTime: "5:50", from: "Барселона", arrDate: "29.08.2026", arrTime: "9:40", to: "Мадрид", stops: "Прямой", stopHours: "", airline: "Поезд", link: "", price: 7260 }
     ]
   },
   {
     id: "out-E",
-    title: "Вариант E — через Измир (Ajet) → Мадрид",
+    title: "Вариант E — через Измир (Ajet)",
     badge: "пересадка в Стамбуле",
     dest: "Мадрид",
     airlines: "Ajet + Turkish Airlines + SunExpress",
@@ -251,7 +260,7 @@ const outbound = [
   },
   {
     id: "out-F",
-    title: "Вариант F — через Измир (Turkish) → Мадрид",
+    title: "Вариант F — через Измир (Turkish)",
     badge: "пересадка в Стамбуле",
     dest: "Мадрид",
     airlines: "Turkish Airlines + SunExpress",
@@ -263,7 +272,7 @@ const outbound = [
   },
   {
     id: "out-G",
-    title: "Вариант G — через Измир (Pegasus) → Мадрид",
+    title: "Вариант G — через Измир (Pegasus)",
     badge: null,
     dest: "Мадрид",
     airlines: "Pegasus + SunExpress",
@@ -308,6 +317,18 @@ const back = [
     segments: [
       { depDate: "11.09.2026", depTime: "18:25", from: "Мадрид", arrDate: "12.09.2026", arrTime: "6:15", to: "Москва", stops: "1 (Стамбул)", stopHours: "2:40", airline: "Turkish Airlines", link: "https://avs.io/AmwW", price: 83578 }
     ]
+  },
+  {
+    id: "back-C",
+    title: "Вариант C — из Севильи (через Измир)",
+    badge: "пересадка в Стамбуле",
+    origin: "Севилья",
+    airlines: "Pegasus Airlines",
+    price: 81559,
+    segments: [
+      { depDate: "10.09.2026", depTime: "15:45", from: "Севилья", arrDate: "11.09.2026", arrTime: "1:15", to: "Измир", stops: "1 (Стамбул)", stopHours: "3:05", airline: "Pegasus Airlines", link: "https://avs.io/BsdZ", price: 29385 },
+      { depDate: "11.09.2026", depTime: "20:35", from: "Измир", arrDate: "12.09.2026", arrTime: "0:55", to: "Москва", stops: "Прямой", stopHours: "19:20", airline: "Pegasus Airlines", link: "https://avs.io/BseG", price: 52174 }
+    ]
   }
 ];
 
@@ -351,7 +372,10 @@ function renderSection(list, containerId, group, defaultId) {
           ${o.title}
           ${o.badge ? `<span class="badge">${o.badge}</span>` : ""}
         </span>
-        <span class="price-tag">${fmt(o.price)}</span>
+        <span class="price-wrap">
+          <span class="price-tag">${fmt(o.price)}</span>
+          <span class="delta" data-price="${o.price}"></span>
+        </span>
       </div>
       ${segTable(o.segments)}
     </label>`).join("");
@@ -366,6 +390,18 @@ function selected(list, group) {
   return list.find(o => o.id === id);
 }
 
+function fmtDelta(d) {
+  if (d === 0) return "±0 ₽";
+  const sign = d > 0 ? "+" : "−";
+  return sign + Math.abs(d).toLocaleString("ru-RU") + " ₽";
+}
+
+function updateDeltas(containerId, selectedPrice) {
+  document.querySelectorAll(`#${containerId} .delta`).forEach(el => {
+    el.textContent = fmtDelta(Number(el.dataset.price) - selectedPrice);
+  });
+}
+
 function update() {
   document.querySelectorAll(".opt").forEach(el => {
     el.classList.toggle("selected", el.querySelector("input").checked);
@@ -374,6 +410,9 @@ function update() {
   const b = selected(back, "back");
   const total = o.price + b.price;
   document.getElementById("total").textContent = fmt(total);
+
+  updateDeltas("section-out", o.price);
+  updateDeltas("section-back", b.price);
 
   const diff = total - minTotal;
   document.getElementById("diff").textContent = diff === 0
