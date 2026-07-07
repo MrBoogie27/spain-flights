@@ -292,6 +292,54 @@ const outbound = [
     segments: [
       { depDate: "28.08.2026", depTime: "4:00", from: "Москва", arrDate: "28.08.2026", arrTime: "13:30", to: "Мадрид", stops: "1 (Стамбул)", stopHours: "1:50", airline: "Pegasus", link: "https://avs.io/AmO1", price: 91010 }
     ]
+  },
+  {
+    id: "out-I",
+    title: "Вариант I — 2 ночи в Измире (Turkish, как в A)",
+    badge: "пересадка в Стамбуле",
+    dest: "Мадрид",
+    airlines: "Turkish Airlines + Pegasus",
+    price: 97108,
+    segments: [
+      { depDate: "28.08.2026", depTime: "2:25", from: "Москва", arrDate: "28.08.2026", arrTime: "11:10", to: "Измир", stops: "1 (Стамбул)", stopHours: "3:45", airline: "Turkish Airlines", link: "https://avs.io/AlXy", price: 55316 },
+      { depDate: "30.08.2026", depTime: "09:20", from: "Измир", arrDate: "30.08.2026", arrTime: "12:45", to: "Мадрид", stops: "Прямой", stopHours: "46:10", airline: "Pegasus Airlines", link: "https://avs.io/BPUY", price: 41792 }
+    ]
+  },
+  {
+    id: "out-J",
+    title: "Вариант J — 2 ночи в Измире (Pegasus, как в B)",
+    badge: null,
+    dest: "Мадрид",
+    airlines: "Pegasus",
+    price: 105349,
+    segments: [
+      { depDate: "28.08.2026", depTime: "1:45", from: "Москва", arrDate: "28.08.2026", arrTime: "5:55", to: "Измир", stops: "Прямой", stopHours: "", airline: "Pegasus", link: "https://short-url.cc/1sPL2", price: 63557 },
+      { depDate: "30.08.2026", depTime: "09:20", from: "Измир", arrDate: "30.08.2026", arrTime: "12:45", to: "Мадрид", stops: "Прямой", stopHours: "51:25", airline: "Pegasus Airlines", link: "https://avs.io/BPUY", price: 41792 }
+    ]
+  },
+  {
+    id: "out-K",
+    title: "Вариант K — 2 ночи в Измире (Ajet через Анкару, как в C)",
+    badge: "пересадка в Анкаре",
+    dest: "Мадрид",
+    airlines: "Ajet + Pegasus",
+    price: 84587,
+    segments: [
+      { depDate: "28.08.2026", depTime: "5:05", from: "Москва", arrDate: "28.08.2026", arrTime: "11:50", to: "Измир", stops: "1 (Анкара)", stopHours: "1:10", airline: "Ajet", link: "https://avs.io/An04", price: 42795 },
+      { depDate: "30.08.2026", depTime: "09:20", from: "Измир", arrDate: "30.08.2026", arrTime: "12:45", to: "Мадрид", stops: "Прямой", stopHours: "45:30", airline: "Pegasus Airlines", link: "https://avs.io/BPUY", price: 41792 }
+    ]
+  },
+  {
+    id: "out-L",
+    title: "Вариант L — 2 ночи в Измире (Ajet + Turkish, как в D)",
+    badge: "пересадка в Стамбуле",
+    dest: "Мадрид",
+    airlines: "Ajet + Turkish Airlines + Pegasus",
+    price: 84908,
+    segments: [
+      { depDate: "28.08.2026", depTime: "1:45", from: "Москва", arrDate: "28.08.2026", arrTime: "9:25", to: "Измир", stops: "1 (Стамбул)", stopHours: "2:15", airline: "Ajet + Turkish Airlines", link: "https://avs.io/BmiH", price: 43116 },
+      { depDate: "30.08.2026", depTime: "09:20", from: "Измир", arrDate: "30.08.2026", arrTime: "12:45", to: "Мадрид", stops: "Прямой", stopHours: "47:55", airline: "Pegasus Airlines", link: "https://avs.io/BPUY", price: 41792 }
+    ]
   }
 ];
 
