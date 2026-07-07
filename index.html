@@ -377,6 +377,42 @@ const back = [
       { depDate: "10.09.2026", depTime: "15:45", from: "Севилья", arrDate: "11.09.2026", arrTime: "1:15", to: "Измир", stops: "1 (Стамбул)", stopHours: "3:05", airline: "Pegasus Airlines", link: "https://avs.io/BsdZ", price: 29385 },
       { depDate: "11.09.2026", depTime: "20:35", from: "Измир", arrDate: "12.09.2026", arrTime: "0:55", to: "Москва", stops: "Прямой", stopHours: "19:20", airline: "Pegasus Airlines", link: "https://avs.io/BseG", price: 52174 }
     ]
+  },
+  {
+    id: "back-D",
+    title: "Вариант D — из Барселоны (ночь в Измире, SunExpress)",
+    badge: "пересадка в Измире",
+    origin: "Барселона",
+    airlines: "SunExpress + Pegasus Airlines",
+    price: 89777,
+    segments: [
+      { depDate: "10.09.2026", depTime: "22:35", from: "Барселона", arrDate: "11.09.2026", arrTime: "2:45", to: "Измир", stops: "Прямой", stopHours: "", airline: "SunExpress", link: "https://avs.io/BWlX", price: 89777 },
+      { depDate: "11.09.2026", depTime: "20:35", from: "Измир", arrDate: "12.09.2026", arrTime: "0:55", to: "Москва", stops: "Прямой", stopHours: "17:50", airline: "Pegasus Airlines", link: "https://avs.io/BWlX", price: 0 }
+    ]
+  },
+  {
+    id: "back-E",
+    title: "Вариант E — из Барселоны (стыковка в Измире 1:35)",
+    badge: "пересадка в Измире",
+    origin: "Барселона",
+    airlines: "Pegasus Airlines",
+    price: 56298,
+    segments: [
+      { depDate: "11.09.2026", depTime: "14:45", from: "Барселона", arrDate: "11.09.2026", arrTime: "19:00", to: "Измир", stops: "Прямой", stopHours: "", airline: "Pegasus Airlines", link: "https://avs.io/BWmv", price: 56298 },
+      { depDate: "11.09.2026", depTime: "20:35", from: "Измир", arrDate: "12.09.2026", arrTime: "0:55", to: "Москва", stops: "Прямой", stopHours: "1:35", airline: "Pegasus Airlines", link: "https://avs.io/BWmv", price: 0 }
+    ]
+  },
+  {
+    id: "back-F",
+    title: "Вариант F — из Барселоны (ночная пересадка в Измире)",
+    badge: "ночная пересадка в Измире",
+    origin: "Барселона",
+    airlines: "Pegasus Airlines",
+    price: 109242,
+    segments: [
+      { depDate: "11.09.2026", depTime: "14:45", from: "Барселона", arrDate: "11.09.2026", arrTime: "19:00", to: "Измир", stops: "Прямой", stopHours: "", airline: "Pegasus Airlines", link: "https://avs.io/BWmU", price: 109242 },
+      { depDate: "12.09.2026", depTime: "20:35", from: "Измир", arrDate: "13.09.2026", arrTime: "0:55", to: "Москва", stops: "Прямой", stopHours: "25:35", airline: "Pegasus Airlines", link: "https://avs.io/BWmU", price: 0 }
+    ]
   }
 ];
 
